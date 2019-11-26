@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private TextView txt;
     private Button btn;
-    private int count = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnOnClick(View view) {
-        count =1;
+
         progressBar.setVisibility(View.VISIBLE);
         progressBar.setProgress(0);
         new MyTask().execute(10);
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     class MyTask extends AsyncTask<Integer, Integer, String> {
         @Override
         protected String doInBackground(Integer... params) {
-
+            int count = 1;
             for (; count <= params[0]; count++) {
                 try {
                     Thread.sleep(1000);
